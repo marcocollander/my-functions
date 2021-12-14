@@ -1,5 +1,5 @@
 # my-functions
-My small function step by by step
+My small functions step by step
 
 ## displayName()
 
@@ -7,7 +7,7 @@ My small function step by by step
 
 ```
 
-## Funkcja findSpaces
+## Function findSpaces
 
 ```javascript
 
