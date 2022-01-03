@@ -1,35 +1,39 @@
-let text = "Raz dwa trzy cztery pięć";
-
 function wordsBig(text) {
-  let numberOfSapces = 0;
-  let numberOfWords = numberOfSapces + 1;
   const indexOfSpaces = [];
   const words = [];
 
   for (let i = 0; i < text.length; i++) {
     if (text[i] === ' ') {
-      numberOfSapces++;
-      indexOfSpaces.push = i;
+      indexOfSpaces.push(i);
     }
   }
 
-  if (numberOfSapces === 0) {
-    console.log(text.toUpperCase());
+  if (indexOfSpaces.length === 0) {
+    return text.toUpperCase();
   }
 
-  for (let i = 0; i < numberOfWords; i++) {
+  for (let i = 0; i < indexOfSpaces.length; i++) {
     if (i == 0) {
-      words.push(text.slice(i, indexOfSpaces[i]))
+      words.push(text.slice(0, indexOfSpaces[i]))
     } else {
-      words.push(slice(indexOfSpaces[i - 1] + i, indexOfSpaces[i]))
+      words.push(text.slice(indexOfSpaces[i - 1], indexOfSpaces[i]));
     }
   }
 
-  console.log(words);
+  words.push(text.slice(indexOfSpaces[indexOfSpaces.length - 1]))
+
+  for (let i = 0; i < words.length; i++) {
+    if (i % 2 !== 0) {
+      words[i] = words[i].toUpperCase();
+    }
+  }
+
+  return words.join('');
+
 }
 
-wordsBig(`Ala ma kota a kot ma Ale`);
-wordsBig('Marco');
+console.log(wordsBig('Marco'));
+console.log(wordsBig(`Raz dwa trzy cztery pięć`));
 
 
 
